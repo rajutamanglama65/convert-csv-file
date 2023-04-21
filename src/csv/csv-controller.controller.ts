@@ -10,7 +10,7 @@ export class CsvController {
   @Post('convert')
   @UseInterceptors(FileInterceptor('file'))
   async import()  {
-    const data = await this.csvService.parseCsv("../");
+    const data = await this.csvService.parseCsv(csvFile);
     await this.csvService.saveCsvToDb(data);
     return { message: 'Data imported successfully.' };
   }
