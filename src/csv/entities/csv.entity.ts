@@ -2,64 +2,64 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 
 @Entity()
-export class csv {
+export class Csv {
     @PrimaryGeneratedColumn()
-    Id: number
+    Id: number;
 
-    @Column()
-    Quarter: string
+    @Column({ nullable: true })
+    Quarter?: string;
 
-    @Column()
-    Team: string
+    @Column({ nullable: true })
+    Team?: string;
 
-    @Column()
-    KeyResults: string
+    @Column({ nullable: true })
+    KeyResults?: string;
 
-    @Column()
-    Objective: string
+    @Column({ nullable: true })
+    Objective?: string;
 
-    @Column()
-    InitialValue: number
+    @Column({ nullable: true })
+    InitialValue?: number;
 
-    @Column()
-    CurrentValue: number
+    @Column({ nullable: true })
+    CurrentValue?: number;
 
-    @Column()
-    TargetValue: number
+    @Column({ nullable: true })
+    TargetValue?: number;
 
-    @Column()
-    Progress: number
+    @Column({ nullable: true })
+    Progress?: number;
 
-    @Column()
-    TimeFrame: string
+    @Column({ nullable: true })
+    TimeFrame?: string;
 
-    @Column()
-    LastModified: string
+    @Column({ nullable: true })
+    LastModified?: string;
 
-    @Column()
-    Comments: string[]
+    @Column({ nullable: true })
+    Comments?: string;
 
-    @Column()
-    QuarterStart: string
+    @Column({ nullable: true })
+    QuarterStart?: string;
 
-    @Column()
-    Difference: string
+    @Column({ nullable: true })
+    Difference?: string;
 
-    @Column()
-    Health: string
+    @Column({ nullable: true })
+    Health?: string;
 
-    @Column()
-    KPIs: string[]
+    @Column({ nullable: true })
+    KPIs?: string;
 
-    @Column()
-    ProgressBar: string
+    @Column({ nullable: true })
+    ProgressBar?: string;
 
-    @Column()
-    Property: string
+    @Column({ nullable: true })
+    Property?: string;
 
-    @Column()
-    property1: string
+    @Column({ nullable: true })
+    property1?: string;
 
-    @Column()
-    key: string
+    @Column({ nullable: true })
+    key?: string;
 }

@@ -3,16 +3,17 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as csvParser from 'csv-parser';
 import * as fs from 'fs';
-import { csv } from './entities/csv.entity';
+import { Csv } from './entities/csv.entity';
 
 @Injectable()
 export class CsvService {
   constructor(
-    @InjectRepository(csv)
-    private readonly csvRepository: Repository<csv>,
+    @InjectRepository(Csv)
+    private readonly csvRepository: Repository<Csv>,
   ) {}
 
   async parseCsv(filePath: string): Promise<any[]> {
+    console.log("filePath: ", filePath)
     const results = [];
     return new Promise((resolve, reject) => {
       fs.createReadStream(filePath)
@@ -27,7 +28,7 @@ export class CsvService {
     });
   }
 
-  async saveCsvToDb(data: any[]): Promise<any> {
+  async saveCsvToDb(data: Csv[]): Promise<any> {
     return await this.csvRepository.save(data);
   }
 }

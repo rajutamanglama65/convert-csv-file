@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from "@nestjs/config"
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { csvModule } from './csv/csv.module';
+import { CsvModule } from './csv/csv.module';
+import { Csv } from './csv/entities/csv.entity';
 
 @Module({
   imports: [TypeOrmModule.forRootAsync({
@@ -18,11 +19,12 @@ import { csvModule } from './csv/csv.module';
       password: configService.get("DB_PASSWORD"),
       database: configService.get("DB_DATABASE"),
       synchronize: configService.get("DB_SYNC"),
-      entities: ["__dirname + '/**/*.entity{.ts,.js}"],
+      // entities: ["__dirname + '/**/*.entity{.ts,.js,.csv}"],
+      entities: [Csv],
       logging: true
     }),
     inject: [ConfigService]
-  }), csvModule],
+  }), CsvModule],
   controllers: [],
   providers: [],
 })
