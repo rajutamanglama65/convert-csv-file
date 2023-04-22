@@ -19,7 +19,7 @@ import { Csv } from './csv/entities/csv.entity';
       password: configService.get("DB_PASSWORD"),
       database: configService.get("DB_DATABASE"),
       synchronize: configService.get("DB_SYNC"),
-      // entities: ["__dirname + '/**/*.entity{.ts,.js,.csv}"],
+      // entities: ["__dirname + '/**/*.entity{.ts,.js}"],
       entities: [Csv],
       logging: true
     }),

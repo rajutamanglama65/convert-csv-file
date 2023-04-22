@@ -28,7 +28,7 @@ export class Csv {
     TargetValue?: number;
 
     @Column({ nullable: true })
-    Progress?: number;
+    Progress?: string;
 
     @Column({ nullable: true })
     TimeFrame?: string;
